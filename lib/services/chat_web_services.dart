@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/widgets.dart';
 import 'package:web_socket_client/web_socket_client.dart';
 
 class ChatWebService {
@@ -30,8 +31,8 @@ class ChatWebService {
   }
 
   void chat(String query) {
-    print(query);
-    print(_socket);
+    debugPrint(query);
+    debugPrint(_socket.toString());
     _socket!.send(json.encode({'query': query}));
   }
 }
